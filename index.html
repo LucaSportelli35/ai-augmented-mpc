@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Augmented MPC for Safe and Adaptive RPO</title>
+  <meta name="description" content="Project page for AI-Augmented Model Predictive Control for safe and adaptive rendezvous and proximity operations." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">Adaptive Spacecraft Autonomy · Model Predictive Control · RPO</p>
+      <h1>AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations</h1>
+      <p class="authors">
+        <strong>Luca Sportelli</strong>, Tyler Barr, Cagri Kilic, Di Wu<br />
+        Department of Aerospace Engineering, Embry-Riddle Aeronautical University
+      </p>
+      <div class="button-row">
+        <a href="#abstract" class="button primary">Read Summary</a>
+        <a href="#results" class="button">Results</a>
+        <a href="#bibtex" class="button">BibTeX</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="teaser" class="section container">
+      <img class="teaser-img" src="assets/fig01_architecture.png" alt="AI-augmented MPC architecture diagram" />
+      <p class="caption">
+        The proposed controller preserves a constrained receding-horizon MPC layer while an adaptive supervisory layer updates interpretable optimization parameters such as prediction horizons, safety weights, and keep-out-zone objectives.
+      </p>
+    </section>
+
+    <section id="abstract" class="section container narrow">
+      <h2>Abstract</h2>
+      <p>
+        Autonomous rendezvous and proximity operations in adversarial orbital environments require guidance architectures that balance target pursuit, safety preservation, and real-time adaptability. This project presents an adaptive Model Predictive Control framework for spacecraft rendezvous and proximity operations in a multi-agent adversarial scenario.
+      </p>
+      <p>
+        The key design choice is that the learning layer does not directly command thrust. Instead, it updates high-level and physically interpretable MPC parameters, while the constrained optimization problem remains responsible for generating thrust commands under orbital dynamics, actuator limits, predictive keep-out-zone constraints, and feasibility-preserving slack variables.
+      </p>
+    </section>
+
+    <section id="method" class="section container">
+      <h2>Method</h2>
+      <div class="grid two">
+        <div>
+          <h3>Constrained MPC inner loop</h3>
+          <p>
+            The inner loop solves a finite-horizon quadratic program at every control update using Clohessy-Wiltshire relative orbital dynamics. The optimizer tracks the target spacecraft while enforcing actuator limits and predictive safety constraints around the adversarial spacecraft.
+          </p>
+        </div>
+        <div>
+          <h3>Adaptive supervisory outer loop</h3>
+          <p>
+            The outer loop updates interpretable MPC parameters online, including prediction horizon, control horizon, terminal weights, safety penalty, and minimum separation objective. This creates adaptive behavior without replacing the constrained MPC structure.
+          </p>
+        </div>
+      </div>
+      <img class="figure" src="assets/fig02_prediction_horizon.png" alt="MPC prediction horizon and safety constraints" />
+      <p class="caption">
+        Prediction horizon, control horizon, and predictive safety-aware trajectory adjustment around the Guard keep-out zone.
+      </p>
+    </section>
+
+    <section id="results" class="section container">
+      <h2>Results</h2>
+      <div class="highlight">
+        <div><span class="big">1000</span><br />Monte Carlo runs</div>
+        <div><span class="big">94.0%</span><br />success rate</div>
+        <div><span class="big">44</span><br />timeouts</div>
+        <div><span class="big">16</span><br />Guard captures</div>
+      </div>
+
+      <img class="figure" src="assets/fig03_montecarlo.jpeg" alt="Monte Carlo success statistics" />
+      <p class="caption">
+        Monte Carlo robustness evaluation showing mission outcomes, closest approach to Lady and Guard, and the safety-performance trade space.
+      </p>
+
+      <img class="figure" src="assets/fig04_distance_histories.jpeg" alt="Adaptive MPC distance histories" />
+      <p class="caption">
+        Recorded Bandit-Lady and Bandit-Guard distance histories grouped by outcome over the adaptive MPC robustness dataset.
+      </p>
+    </section>
+
+    <section id="comparison" class="section container">
+      <h2>Controller Comparison</h2>
+      <p class="narrow">
+        The adaptive agent improves the representative success rate compared with naive and fixed-parameter MPC configurations by changing optimization priorities online in response to the evolving adversarial geometry.
+      </p>
+      <img class="figure" src="assets/fig05_controller_comparison.jpeg" alt="Naive MPC, fixed agent, and adaptive agent comparison" />
+    </section>
+
+    <section id="interpretability" class="section container">
+      <h2>Adaptive Parameters and Interpretability</h2>
+      <p class="narrow">
+        Because the supervisory layer acts on interpretable MPC parameters, the adaptive behavior can be analyzed through quantities such as the Guard keep-out-zone weight and the minimum separation objective.
+      </p>
+      <img class="figure" src="assets/fig06_parameter_evolution.png" alt="Adaptive parameter evolution" />
+      <img class="figure" src="assets/fig07_interpretability.png" alt="Parameter geometry interpretability" />
+    </section>
+
+    <section id="paper" class="section container narrow">
+      <h2>Paper and Code</h2>
+      <p>
+        Paper link: <em>coming soon</em><br />
+        Code link: <em>coming soon</em><br />
+        Project repository: <em>coming soon</em>
+      </p>
+    </section>
+
+    <section id="bibtex" class="section container narrow">
+      <h2>BibTeX</h2>
+      <pre><code>@article{sportelli2026ai_augmented_mpc,
+  title  = {AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations},
+  author = {Sportelli, Luca and Barr, Tyler and Kilic, Cagri and Wu, Di},
+  journal = {Under review},
+  year   = {2026}
+}</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Luca Sportelli · Embry-Riddle Aeronautical University</p>
+    </div>
+  </footer>
+</body>
+</html>
