@@ -6,7 +6,8 @@ Project webpage for:
 
 Authors:
 Luca Sportelli, Tyler Barr, Cagri Kilic, Di Wu  
-Department of Aerospace Engineering, Embry-Riddle Aeronautical University
+Department of Aerospace Engineering, Embry-Riddle Aeronautical University  
+XDLab: https://xdlab.space/
 
 Website:
 https://lucasportelli35.github.io/ai-augmented-mpc/
@@ -31,6 +32,12 @@ To update the GitHub Pages website:
 4. Click **Commit changes**.
 5. Wait around 1–3 minutes.
 6. Refresh the website.
+
+## External links included
+
+- XDLab: https://xdlab.space/
+- Aerospace America article: https://aerospaceamerica.aiaa.org/institute/gotcha-students-capture-malfunctioning-satellite-in-spacecraft-control-exercise/
+- ERAU news story: https://erau.edu/about/news-and-stories/news/embry-riddle-student-team-earns-first-place-in-capture-the-satellite-competition
 
 ## Future additions
 

@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AI-Augmented MPC for Safe and Adaptive Spacecraft RPO</title>
+  <title>AI-Augmented MPC for Safe and Adaptive RPO</title>
   <meta name="description" content="AI-augmented Model Predictive Control for safe and adaptive spacecraft rendezvous and proximity operations in adversarial multi-agent orbital environments." />
   <meta name="author" content="Luca Sportelli" />
 
-  <meta property="og:title" content="AI-Augmented MPC for Safe and Adaptive Spacecraft RPO" />
-  <meta property="og:description" content="A constrained MPC architecture with interpretable online supervisory adaptation for adversarial spacecraft rendezvous and proximity operations." />
+  <meta property="og:title" content="AI-Augmented MPC for Safe and Adaptive RPO" />
+  <meta property="og:description" content="Constrained MPC with interpretable AI supervisory parameter adaptation for adversarial spacecraft rendezvous and proximity operations." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,123 +29,103 @@
 
 <body>
   <nav class="nav">
-    <a class="brand" href="#top">
-      <span class="brand-mark">MPC</span>
-      <span>AI-Augmented RPO</span>
-    </a>
-    <div class="nav-links">
-      <a href="#method">Method</a>
-      <a href="#results">Results</a>
-      <a href="#competition">Competition</a>
-      <a href="#interpretability">Interpretability</a>
-      <a href="#citation">Citation</a>
+    <div class="nav-inner">
+      <a class="brand" href="#top">AI-Augmented MPC</a>
+      <div class="nav-links">
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#competition">Competition</a>
+        <a href="#interpretability">Interpretability</a>
+        <a href="#citation">Citation</a>
+      </div>
     </div>
   </nav>
 
   <header id="top" class="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-grid">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Competition-winning adaptive spacecraft autonomy</p>
-        <h1>AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations</h1>
-        <p class="subtitle">
-          A constrained receding-horizon MPC architecture where AI supervises interpretable optimization parameters,
-          while the MPC layer remains responsible for thrust generation, actuator limits, predictive safety constraints,
-          and real-time orbital guidance.
-        </p>
-
-        <p class="authors">
-          <strong>Luca Sportelli</strong>, Tyler Barr, Cagri Kilic, Di Wu<br />
-          Department of Aerospace Engineering · Embry-Riddle Aeronautical University
-        </p>
-
-        <div class="button-row">
-          <a class="button primary" href="#abstract">Read overview</a>
-          <a class="button" href="#results">View results</a>
-          <a class="button" href="#competition">News coverage</a>
-          <a class="button ghost" href="#citation">Cite</a>
-        </div>
-      </div>
-
-      <div class="hero-card reveal">
-        <div class="badge">AIAA Capture the Satellite</div>
-        <div class="hero-metric">
-          <span>1st</span>
-          <p>Place performance in the Capture the Satellite spacecraft-control competition environment.</p>
-        </div>
-        <div class="mini-stats">
-          <div><strong>1000</strong><small>MC runs</small></div>
-          <div><strong>94.0%</strong><small>success</small></div>
-          <div><strong>16</strong><small>Guard captures</small></div>
-        </div>
+    <div class="container">
+      <p class="eyebrow">Adaptive Spacecraft Autonomy · Model Predictive Control · RPO</p>
+      <h1>AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations</h1>
+      <p class="hero-subtitle">
+        A constrained receding-horizon MPC framework where AI supervises interpretable optimization parameters,
+        while MPC remains responsible for spacecraft thrust generation, actuator limits, predictive safety constraints,
+        and real-time orbital guidance.
+      </p>
+      <p class="authors">
+        <strong>Luca Sportelli</strong>, Tyler Barr, Cagri Kilic, Di Wu<br />
+        Department of Aerospace Engineering, Embry-Riddle Aeronautical University ·
+        <a href="https://xdlab.space/" target="_blank" rel="noopener">XDLab</a>
+      </p>
+      <div class="button-row">
+        <a href="#abstract" class="button primary">Read Summary</a>
+        <a href="#results" class="button">Results</a>
+        <a href="#competition" class="button">Competition News</a>
+        <a href="#citation" class="button">BibTeX</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="abstract" class="section container narrow reveal">
-      <h2>Project Overview</h2>
-      <p class="lead">
-        Autonomous rendezvous and proximity operations in adversarial orbital environments require guidance systems
-        that can pursue a target, preserve safety, and adapt online as the interaction geometry changes.
-      </p>
-      <p>
-        This work presents an AI-augmented Model Predictive Control framework for adversarial spacecraft RPO.
-        The core idea is deliberately conservative: the adaptive layer does <strong>not</strong> directly command thrust.
-        Instead, it modifies high-level MPC optimization parameters such as tracking weights, safety penalties,
-        prediction horizons, and keep-out-zone objectives.
-      </p>
+    <section class="section container">
+      <div class="metric-strip">
+        <div><span>1st</span><p>Place @ AIAA Capture the Satellite</p></div>
+        <div><span>1000</span><p>Adaptive MPC Monte Carlo runs</p></div>
+        <div><span>94.0%</span><p>Mission success rate</p></div>
+        <div><span>940</span><p>Successful runs</p></div>
+      </div>
     </section>
 
-    <section class="section container reveal">
-      <div class="section-title">
-        <p class="eyebrow dark">Core architecture</p>
-        <h2>Learning supervises MPC. MPC commands the spacecraft.</h2>
-      </div>
+    <section id="teaser" class="section container">
       <img class="teaser-img" src="assets/fig01_architecture.png" alt="AI-augmented MPC architecture diagram" />
       <p class="caption">
-        Overview of the proposed AI-augmented MPC framework. State and geometry features inform the adaptive supervisory layer, which updates bounded and interpretable MPC parameters. The constrained MPC/QP layer remains responsible for producing spacecraft thrust commands.
+        Overview of the proposed AI-augmented MPC framework. State and geometry features inform the adaptive supervisory layer, which updates bounded and interpretable MPC parameters. The constrained MPC/QP layer remains responsible for generating spacecraft thrust commands.
       </p>
     </section>
 
-    <section id="method" class="section container reveal">
-      <div class="section-title">
-        <p class="eyebrow dark">Method</p>
-        <h2>Constrained predictive control with adaptive supervisory tuning</h2>
-      </div>
+    <section id="abstract" class="section container narrow">
+      <h2>Project Overview</h2>
+      <p>
+        Autonomous rendezvous and proximity operations in adversarial orbital environments require guidance systems
+        capable of balancing target pursuit, safety preservation, and real-time adaptability under dynamically evolving
+        interaction conditions.
+      </p>
+      <p>
+        This work presents an adaptive Model Predictive Control framework for autonomous spacecraft RPO in a multi-agent
+        adversarial scenario. The key idea is that the learning layer does <strong>not</strong> directly command thrust.
+        Instead, it modifies high-level, physically interpretable MPC parameters such as tracking weights, prediction
+        horizons, safety penalties, and keep-out-zone objectives.
+      </p>
+    </section>
+
+    <section id="method" class="section container">
+      <h2>Method</h2>
 
       <div class="grid three">
-        <article class="card">
-          <span class="card-number">01</span>
-          <h3>Relative orbital dynamics</h3>
+        <div class="card">
+          <h3>Constrained MPC inner loop</h3>
           <p>
-            The prediction model uses Clohessy-Wiltshire linearized relative orbital dynamics in the local LVLH frame,
-            enabling computationally efficient real-time finite-horizon optimization.
+            At each control update, the controller solves a finite-horizon quadratic program using Clohessy-Wiltshire
+            relative orbital dynamics, actuator bounds, predictive safety constraints, and feasibility-preserving slack variables.
           </p>
-        </article>
-
-        <article class="card">
-          <span class="card-number">02</span>
-          <h3>Constrained MPC</h3>
+        </div>
+        <div class="card">
+          <h3>Adaptive supervisory outer loop</h3>
           <p>
-            At each control update, the inner loop solves a constrained quadratic program with actuator bounds,
-            predictive keep-out-zone constraints, slack-variable feasibility handling, and optional CBF safety filtering.
+            The adaptive layer changes optimization-level parameters online, including prediction horizons, control horizons,
+            tracking weights, safety penalties, and minimum separation objectives.
           </p>
-        </article>
-
-        <article class="card">
-          <span class="card-number">03</span>
-          <h3>AI supervisory layer</h3>
+        </div>
+        <div class="card">
+          <h3>Interpretability by design</h3>
           <p>
-            The outer loop adapts selected optimization-level parameters online, producing strategic behavior while
-            preserving the structure and interpretability of the underlying MPC problem.
+            Since adaptation acts on meaningful MPC quantities rather than raw thrust commands, the resulting behavior can be
+            analyzed through physical geometry, safety metrics, and parameter trends.
           </p>
-        </article>
+        </div>
       </div>
 
       <div class="equation-card">
-        <p class="eq-label">Receding-horizon MPC form</p>
-        <div class="eq">
+        <p class="eq-title">Parametric constrained MPC problem</p>
+        <div class="equation">
           $$z^\star(x_k,P_k)=\arg\min_z \frac{1}{2}z^\top H(P_k)z+f(x_k,P_k)^\top z$$
           $$\text{s.t.}\quad A(x_k,P_k)z\le b(x_k,P_k),\qquad z_{lb}\le z\le z_{ub}$$
         </div>
@@ -153,148 +133,117 @@
 
       <img class="figure" src="assets/fig02_prediction_horizon.png" alt="MPC prediction horizon and predictive safety constraints" />
       <p class="caption">
-        Prediction horizon and predictive safety-constraint evaluation. The optimizer anticipates Bandit and Guard motion over the horizon and adjusts the trajectory when future keep-out-zone risk becomes active.
+        MPC prediction horizon and predictive safety-constraint evaluation. The optimizer anticipates Bandit and Guard motion
+        and adjusts the predicted trajectory when future keep-out-zone risk becomes active.
       </p>
     </section>
 
-    <section id="results" class="section container reveal">
-      <div class="section-title">
-        <p class="eyebrow dark">Results</p>
-        <h2>Robust closed-loop performance in adversarial RPO</h2>
+    <section id="results" class="section container">
+      <h2>Results</h2>
+
+      <div class="highlight">
+        <div><span class="big">1000</span><br />Monte Carlo runs</div>
+        <div><span class="big">940</span><br />successful runs</div>
+        <div><span class="big">94.0%</span><br />success rate</div>
+        <div><span class="big">44</span><br />timeouts</div>
+        <div><span class="big">16</span><br />Guard captures</div>
       </div>
 
-      <div class="stats-grid">
-        <div class="stat-card">
-          <span>1000</span>
-          <p>adaptive MPC Monte Carlo runs</p>
-        </div>
-        <div class="stat-card">
-          <span>940</span>
-          <p>successful rendezvous outcomes</p>
-        </div>
-        <div class="stat-card">
-          <span>94.0%</span>
-          <p>mission success rate</p>
-        </div>
-        <div class="stat-card">
-          <span>44</span>
-          <p>timeout cases</p>
-        </div>
-        <div class="stat-card">
-          <span>16</span>
-          <p>Guard-capture cases</p>
-        </div>
-      </div>
-
-      <img class="figure" src="assets/fig03_montecarlo.jpeg" alt="Monte Carlo robustness evaluation" />
+      <img class="figure" src="assets/fig03_montecarlo.jpeg" alt="Monte Carlo success statistics" />
       <p class="caption">
-        Monte Carlo robustness evaluation over 1000 adaptive MPC trials, including mission outcomes, closest-approach statistics, and the safety-performance trade space.
+        Monte Carlo robustness evaluation over the 1000-run adaptive MPC campaign, showing outcome distributions, closest
+        Bandit-Lady and Bandit-Guard approaches, and safety-performance trade-space characteristics.
       </p>
 
-      <img class="figure" src="assets/fig04_distance_histories.jpeg" alt="Bandit-Lady and Bandit-Guard distance histories" />
+      <img class="figure" src="assets/fig04_distance_histories.jpeg" alt="Adaptive MPC distance histories" />
       <p class="caption">
-        Distance histories show the controller balancing target pursuit and Guard avoidance over normalized mission progress, with different trajectory signatures for success, timeout, and Guard-capture outcomes.
+        Recorded Bandit-Lady and Bandit-Guard distance histories grouped by outcome. Successful runs typically reduce
+        target-relative distance while preserving or recovering Guard separation margins.
       </p>
     </section>
 
-    <section id="comparison" class="section container reveal">
-      <div class="section-title">
-        <p class="eyebrow dark">Controller comparison</p>
-        <h2>Adaptive tuning changes behavior when the geometry changes</h2>
-      </div>
-
-      <p class="lead narrow">
-        Compared with naive and fixed-parameter MPC configurations, the adaptive controller can modify safety and tracking priorities online during adversarial encounters, while all control commands remain generated by the constrained MPC optimizer.
+    <section id="comparison" class="section container">
+      <h2>Controller Comparison</h2>
+      <p class="narrow center">
+        The adaptive supervisory layer enables the controller to dynamically modify optimization priorities according
+        to evolving adversarial geometry, producing visibly different behavior compared with naive and fixed-parameter MPC configurations.
       </p>
-
       <img class="figure" src="assets/fig05_controller_comparison.jpeg" alt="Naive MPC, fixed agent, and adaptive agent comparison" />
       <p class="caption">
-        Representative comparison across naive MPC, fixed-parameter MPC, and adaptive MPC cases. The adaptive configuration exhibits more flexible behavior under evolving Guard-Lady-Bandit interaction geometry.
+        Representative controller comparison across naive MPC, fixed-parameter MPC, and adaptive MPC cases.
       </p>
     </section>
 
-    <section id="competition" class="section container reveal">
-      <div class="competition-panel">
+    <section id="competition" class="section container">
+      <div class="competition-box">
         <div>
-          <p class="eyebrow dark">Recognition</p>
+          <p class="eyebrow blue">Competition Recognition</p>
           <h2>First Place @ AIAA Capture the Satellite</h2>
-          <p class="lead">
-            The framework was evaluated in the official Kerbal Space Program Differential Game / SpaceGym Capture-the-Satellite environment, where the Embry-Riddle team achieved first-place performance in a real-time adversarial spacecraft-control exercise.
+          <p>
+            The framework was evaluated in the official Kerbal Space Program Differential Game / SpaceGym Capture-the-Satellite
+            environment. The Embry-Riddle team, including <a href="https://xdlab.space/" target="_blank" rel="noopener">XDLab</a>,
+            achieved first-place performance in the competition.
           </p>
           <div class="button-row left">
-            <a class="button dark" href="https://aerospaceamerica.aiaa.org/institute/gotcha-students-capture-malfunctioning-satellite-in-spacecraft-control-exercise/" target="_blank" rel="noopener">Aerospace America article</a>
-            <a class="button dark secondary" href="https://erau.edu/about/news-and-stories/news/embry-riddle-student-team-earns-first-place-in-capture-the-satellite-competition" target="_blank" rel="noopener">ERAU news story</a>
+            <a class="button dark" href="https://aerospaceamerica.aiaa.org/institute/gotcha-students-capture-malfunctioning-satellite-in-spacecraft-control-exercise/" target="_blank" rel="noopener">Aerospace America Article</a>
+            <a class="button dark secondary" href="https://erau.edu/about/news-and-stories/news/embry-riddle-student-team-earns-first-place-in-capture-the-satellite-competition" target="_blank" rel="noopener">ERAU News Story</a>
           </div>
         </div>
 
-        <div class="news-cards">
+        <div class="news-grid">
           <a class="news-card" href="https://aerospaceamerica.aiaa.org/institute/gotcha-students-capture-malfunctioning-satellite-in-spacecraft-control-exercise/" target="_blank" rel="noopener">
             <span>Aerospace America</span>
             <h3>“Gotcha!” Students capture malfunctioning satellite in spacecraft-control exercise</h3>
-            <p>External coverage of the Capture the Satellite challenge and the competition environment.</p>
+            <p>Public coverage of the Capture the Satellite spacecraft-control exercise.</p>
           </a>
 
           <a class="news-card" href="https://erau.edu/about/news-and-stories/news/embry-riddle-student-team-earns-first-place-in-capture-the-satellite-competition" target="_blank" rel="noopener">
             <span>Embry-Riddle News</span>
             <h3>Embry-Riddle student team earns first place in Capture the Satellite competition</h3>
-            <p>University news coverage highlighting the team achievement and competition result.</p>
+            <p>ERAU news coverage of the first-place team result.</p>
           </a>
         </div>
       </div>
     </section>
 
-    <section id="interpretability" class="section container reveal">
-      <div class="section-title">
-        <p class="eyebrow dark">Interpretability</p>
-        <h2>Adaptive decisions remain tied to physical and optimization-level quantities</h2>
-      </div>
-
-      <p class="lead narrow">
-        Since adaptation occurs through bounded MPC parameters rather than unconstrained thrust commands, the controller can be analyzed through physically meaningful quantities such as the keep-out-zone weight, minimum-separation objective, target distance, and Guard proximity.
+    <section id="interpretability" class="section container">
+      <h2>Adaptive Parameters and Interpretability</h2>
+      <p class="narrow center">
+        Because the supervisory layer acts on interpretable MPC parameters, the adaptive behavior can be analyzed through
+        quantities such as Guard safety weight, minimum separation objective, target distance, and Guard proximity.
       </p>
 
-      <img class="figure" src="assets/fig06_parameter_evolution.png" alt="Adaptive safety-parameter evolution" />
+      <img class="figure" src="assets/fig06_parameter_evolution.png" alt="Adaptive parameter evolution" />
       <p class="caption">
-        Population-level online variation in the Guard safety weight and minimum-separation objective over the adaptive MPC robustness dataset.
+        Population-level adaptive safety-parameter evolution, including the Guard keep-out-zone weight and minimum-separation objective.
       </p>
 
-      <img class="figure" src="assets/fig07_interpretability.png" alt="Adaptive parameter geometry interpretability" />
+      <img class="figure" src="assets/fig07_interpretability.png" alt="Parameter geometry interpretability" />
       <p class="caption">
-        Parameter-geometry interpretability: adaptive parameter choices can be related to changing target pursuit and Guard-avoidance conditions.
+        Parameter-geometry interpretability: adaptive parameter choices can be related to changing target-pursuit and Guard-avoidance conditions.
       </p>
     </section>
 
-    <section id="resources" class="section container reveal">
-      <div class="section-title">
-        <p class="eyebrow dark">Resources</p>
-        <h2>Paper, code, and project links</h2>
-      </div>
-
-      <div class="resource-grid">
-        <a class="resource-card disabled" href="#" aria-disabled="true">
-          <span>Paper</span>
-          <h3>Manuscript</h3>
-          <p>Coming soon after publication / preprint release.</p>
-        </a>
-        <a class="resource-card disabled" href="#" aria-disabled="true">
-          <span>Code</span>
-          <h3>Repository</h3>
+    <section id="resources" class="section container narrow">
+      <h2>Paper and Code</h2>
+      <div class="resource-row">
+        <div class="resource-card small">
+          <h3>Paper</h3>
+          <p>Coming soon after publication or preprint release.</p>
+        </div>
+        <div class="resource-card small">
+          <h3>Code</h3>
           <p>Coming soon if/when the implementation can be made public.</p>
-        </a>
-        <a class="resource-card" href="#competition">
-          <span>News</span>
-          <h3>Competition coverage</h3>
-          <p>Read public articles about the Capture the Satellite result.</p>
-        </a>
+        </div>
+        <div class="resource-card small">
+          <h3>News</h3>
+          <p><a href="#competition">See competition coverage</a>.</p>
+        </div>
       </div>
     </section>
 
-    <section id="citation" class="section container narrow reveal">
-      <div class="section-title">
-        <p class="eyebrow dark">Citation</p>
-        <h2>BibTeX</h2>
-      </div>
-
+    <section id="citation" class="section container narrow">
+      <h2>BibTeX</h2>
       <pre><code>@article{sportelli2026ai_augmented_mpc,
   title  = {AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations},
   author = {Sportelli, Luca and Barr, Tyler and Kilic, Cagri and Wu, Di},
@@ -304,28 +253,17 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     <div class="container footer-grid">
       <div>
         <strong>AI-Augmented MPC for Spacecraft RPO</strong>
         <p>Constrained predictive control, adaptive supervision, and interpretable autonomy for adversarial spacecraft rendezvous.</p>
       </div>
       <div>
-        <p>Luca Sportelli · Embry-Riddle Aeronautical University</p>
+        <p>Luca Sportelli · Embry-Riddle Aeronautical University · <a href="https://xdlab.space/" target="_blank" rel="noopener">XDLab</a></p>
         <p><a href="#top">Back to top ↑</a></p>
       </div>
     </div>
   </footer>
-
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.12 });
-
-    reveals.forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
