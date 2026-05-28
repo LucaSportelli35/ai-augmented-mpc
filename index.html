@@ -3,254 +3,262 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI-Augmented MPC for Safe Spacecraft RPO</title>
+
+  <title>AI-Augmented MPC for Safe and Adaptive RPO</title>
   <meta name="description" content="AI-augmented Model Predictive Control for safe and adaptive spacecraft rendezvous and proximity operations in adversarial multi-agent orbital environments." />
-  <meta property="og:title" content="AI-Augmented MPC for Safe Spacecraft RPO" />
-  <meta property="og:description" content="A constrained MPC framework with an adaptive supervisory layer for safe and interpretable spacecraft autonomy." />
-  <meta property="og:image" content="assets/fig01_architecture.png" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="author" content="Luca Sportelli" />
+
+  <meta property="og:title" content="AI-Augmented MPC for Safe and Adaptive RPO" />
+  <meta property="og:description" content="Constrained MPC with interpretable AI supervisory parameter adaptation for adversarial spacecraft rendezvous and proximity operations." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;850;900&display=swap" rel="stylesheet">
+
   <script>
-    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
   </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <nav class="topbar">
-    <a class="brand" href="#">AI-MPC RPO</a>
-    <div class="navlinks">
-      <a href="#method">Method</a>
-      <a href="#results">Results</a>
-      <a href="#interpretability">Interpretability</a>
-      <a href="#citation">Citation</a>
+  <nav class="topnav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">AI-Augmented MPC</a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#competition">Competition</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#interpretability">Interpretability</a>
+        <a href="#citation">Citation</a>
+      </div>
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Spacecraft Autonomy · Safe Learning · Constrained Optimization</p>
-        <h1>AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations</h1>
-        <p class="subtitle">
-          An interpretable autonomy framework where learning adapts high-level MPC parameters online,
-          while constrained receding-horizon optimization remains responsible for generating spacecraft thrust commands.
-        </p>
-
-        <div class="button-row">
-          <a class="button primary" href="#results">View Results</a>
-          <a class="button" href="#method">How it Works</a>
-          <a class="button ghost" href="#citation">BibTeX</a>
-        </div>
-
-        <p class="authors">
-          <strong>Luca Sportelli</strong>, Tyler Barr, Cagri Kilic, Di Wu<br />
-          Embry-Riddle Aeronautical University · Department of Aerospace Engineering
-        </p>
-      </div>
-
-      <div class="hero-card">
-        <div class="status-pill">AIAA Capture the Satellite · Winning GNC architecture</div>
-        <img src="assets/fig01_architecture.png" alt="AI-augmented MPC architecture" />
+  <header id="top" class="hero">
+    <div class="container hero-content">
+      <p class="eyebrow">Adaptive Spacecraft Autonomy · Model Predictive Control · RPO</p>
+      <h1>AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations</h1>
+      <p class="hero-subtitle">
+        A constrained receding-horizon MPC framework where AI supervises interpretable optimization parameters,
+        while MPC remains responsible for spacecraft thrust generation, actuator limits, predictive safety constraints,
+        and real-time orbital guidance.
+      </p>
+      <p class="authors">
+        <strong>Luca Sportelli</strong>, Tyler Barr, Cagri Kilic, Di Wu<br />
+        Department of Aerospace Engineering, Embry-Riddle Aeronautical University ·
+        <a href="https://xdlab.space/" target="_blank" rel="noopener">XDLab</a>
+      </p>
+      <div class="button-row">
+        <a href="#overview" class="button primary">Read Summary</a>
+        <a href="#competition" class="button">Competition News</a>
+        <a href="#results" class="button">Results</a>
+        <a href="#citation" class="button">BibTeX</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section container">
+    <section id="teaser" class="section container">
+      <img class="teaser-img" src="assets/fig01_architecture.png" alt="AI-augmented MPC architecture diagram" />
+      <p class="caption">
+        Overview of the proposed AI-augmented MPC framework. State and geometry features inform the adaptive supervisory layer, which updates bounded and interpretable MPC parameters. The constrained MPC/QP layer remains responsible for generating spacecraft thrust commands.
+      </p>
+    </section>
+
+    <section class="section container compact">
       <div class="metric-strip">
+        <div><span>1st</span><p>Place @ AIAA Capture the Satellite</p></div>
         <div><span>1000</span><p>Monte Carlo runs</p></div>
         <div><span>94.0%</span><p>mission success rate</p></div>
-        <div><span>940</span><p>successful runs</p></div>
         <div><span>16</span><p>Guard captures</p></div>
+      </div>
+    </section>
+
+    <section id="competition" class="section container">
+      <h2>First Place @ AIAA Capture the Satellite</h2>
+      <p class="narrow center">
+        This work is connected to the Embry-Riddle XDLab spacecraft-control effort evaluated in the AIAA Capture the Satellite challenge,
+        where the team achieved first-place performance in an adversarial rendezvous and proximity-operations scenario.
+      </p>
+
+      <div class="news-grid">
+        <a class="news-card" href="https://aerospaceamerica.aiaa.org/institute/gotcha-students-capture-malfunctioning-satellite-in-spacecraft-control-exercise/" target="_blank" rel="noopener">
+          <span>Aerospace America</span>
+          <h3>“Gotcha!” Students capture malfunctioning satellite in spacecraft-control exercise</h3>
+          <p>Public coverage of the Capture the Satellite spacecraft-control exercise and its competition context.</p>
+        </a>
+
+        <a class="news-card" href="https://erau.edu/about/news-and-stories/news/embry-riddle-student-team-earns-first-place-in-capture-the-satellite-competition" target="_blank" rel="noopener">
+          <span>Embry-Riddle News</span>
+          <h3>Embry-Riddle student team earns first place in Capture the Satellite competition</h3>
+          <p>Embry-Riddle coverage of the first-place team result.</p>
+        </a>
+
+        <a class="news-card" href="https://xdlab.space/" target="_blank" rel="noopener">
+          <span>XDLab</span>
+          <h3>Exploration and Digital Lab</h3>
+          <p>Visit the XDLab website for the broader lab context behind this spacecraft autonomy work.</p>
+        </a>
       </div>
     </section>
 
     <section id="overview" class="section container narrow">
       <h2>Project Overview</h2>
       <p>
-        Autonomous rendezvous and proximity operations in adversarial orbital environments require a controller that can
-        pursue a target, avoid unsafe proximity with an adversary, and adapt online without sacrificing interpretability.
-        This work proposes an AI-augmented Model Predictive Control (MPC) framework for a three-spacecraft interaction:
-        the pursuing spacecraft <em>Bandit</em>, the target <em>Lady</em>, and the adversarial spacecraft <em>Guard</em>.
+        Autonomous rendezvous and proximity operations in adversarial orbital environments require guidance systems
+        capable of balancing target pursuit, safety preservation, and real-time adaptability under dynamically evolving
+        interaction conditions.
       </p>
       <p>
-        The core principle is separation of roles: the adaptive layer does <strong>not</strong> directly command thrust.
-        Instead, it modifies interpretable optimization-level quantities such as tracking weights, safety penalties,
-        prediction horizons, terminal weights, and keep-out-zone objectives. The thrust command is still produced by
-        a constrained MPC problem with orbital dynamics, actuator limits, predictive safety constraints, and slack-based
-        feasibility handling.
+        This work presents an adaptive Model Predictive Control framework for autonomous spacecraft RPO in a multi-agent
+        adversarial scenario. The key idea is that the learning layer does <strong>not</strong> directly command thrust.
+        Instead, it modifies high-level, physically interpretable MPC parameters such as tracking weights, prediction
+        horizons, safety penalties, and keep-out-zone objectives.
       </p>
     </section>
 
     <section id="method" class="section container">
-      <div class="section-head">
-        <p class="eyebrow dark">Method</p>
-        <h2>Learning supervises the controller. MPC still commands the spacecraft.</h2>
-      </div>
+      <h2>Method</h2>
 
       <div class="grid three">
-        <article class="card">
-          <h3>1. Relative orbital dynamics</h3>
+        <div class="card">
+          <h3>Constrained MPC inner loop</h3>
           <p>
-            The prediction model uses Clohessy-Wiltshire linearized relative dynamics in the LVLH frame, enabling
-            efficient real-time finite-horizon optimization.
+            At each control update, the controller solves a finite-horizon quadratic program using Clohessy-Wiltshire
+            relative orbital dynamics, actuator bounds, predictive safety constraints, and feasibility-preserving slack variables.
           </p>
-          <div class="equation">
-            $\dot{x}(t)=A_cx(t)+B_cu(t)$
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>2. Constrained MPC inner loop</h3>
-          <p>
-            At each control update, a parametric quadratic program is solved and only the first optimized control action
-            is applied in receding-horizon fashion.
-          </p>
-          <div class="equation">
-            $u_k=z^{\star}_{1:3}(x_k,P_k)$
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>3. Adaptive supervisory layer</h3>
-          <p>
-            Offline derivative-free search and online tabular reinforcement learning select bounded MPC parameter updates
-            based on the evolving orbital geometry.
-          </p>
-          <div class="equation">
-            $Q[s_k,a_k]\leftarrow Q[s_k,a_k]+\alpha(G_k-Q[s_k,a_k])$
-          </div>
-        </article>
-      </div>
-
-      <figure class="figure-wrap">
-        <img src="assets/fig02_prediction_horizon.png" alt="MPC prediction horizon and predictive safety constraints" />
-        <figcaption>
-          MPC prediction horizon and predictive safety-constraint evaluation. The optimizer predicts future Bandit and Guard
-          trajectories and adjusts the Bandit trajectory when the Guard keep-out zone becomes relevant.
-        </figcaption>
-      </figure>
-    </section>
-
-    <section class="section container">
-      <div class="callout">
-        <div>
-          <p class="eyebrow dark">Key design choice</p>
-          <h2>The AI layer changes the optimization problem, not the thrust command.</h2>
         </div>
-        <p>
-          This preserves a safety-aware, constraint-aware, and interpretable MPC structure while still allowing the controller
-          to adapt its behavior online during dynamically evolving adversarial encounters.
-        </p>
+        <div class="card">
+          <h3>Adaptive supervisory outer loop</h3>
+          <p>
+            The adaptive layer changes optimization-level parameters online, including prediction horizons, control horizons,
+            tracking weights, safety penalties, and minimum separation objectives.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Interpretability by design</h3>
+          <p>
+            Since adaptation acts on meaningful MPC quantities rather than raw thrust commands, the resulting behavior can be
+            analyzed through physical geometry, safety metrics, and parameter trends.
+          </p>
+        </div>
       </div>
+
+      <div class="equation-card">
+        <p class="eq-title">Parametric constrained MPC problem</p>
+        <div class="equation">
+          $$z^\star(x_k,P_k)=\arg\min_z \frac{1}{2}z^\top H(P_k)z+f(x_k,P_k)^\top z$$
+          $$\text{s.t.}\quad A(x_k,P_k)z\le b(x_k,P_k),\qquad z_{lb}\le z\le z_{ub}$$
+        </div>
+      </div>
+
+      <img class="figure" src="assets/fig02_prediction_horizon.png" alt="MPC prediction horizon and predictive safety constraints" />
+      <p class="caption">
+        MPC prediction horizon and predictive safety-constraint evaluation. The optimizer anticipates Bandit and Guard motion
+        and adjusts the predicted trajectory when future keep-out-zone risk becomes active.
+      </p>
     </section>
 
     <section id="results" class="section container">
-      <div class="section-head">
-        <p class="eyebrow dark">Results</p>
-        <h2>Monte Carlo robustness in adversarial RPO</h2>
-        <p>
-          The adaptive MPC controller was evaluated in the Kerbal Space Program Differential Game Capture-the-Satellite
-          environment across a 1000-run Monte Carlo campaign.
-        </p>
+      <h2>Results</h2>
+
+      <div class="highlight">
+        <div><span class="big">1000</span><br />Monte Carlo runs</div>
+        <div><span class="big">94.0%</span><br />success rate</div>
+        <div><span class="big">44</span><br />timeouts</div>
+        <div><span class="big">16</span><br />Guard captures</div>
       </div>
 
-      <figure class="figure-wrap">
-        <img src="assets/fig03_montecarlo.jpeg" alt="Monte Carlo robustness evaluation" />
-        <figcaption>
-          Monte Carlo robustness evaluation: 940 successes, 44 timeouts, and 16 Guard-capture cases across 1000 closed-loop runs.
-        </figcaption>
-      </figure>
+      <img class="figure" src="assets/fig03_montecarlo.jpeg" alt="Monte Carlo success statistics" />
+      <p class="caption">
+        Monte Carlo robustness evaluation over the 1000-run adaptive MPC campaign, showing outcome distributions, closest
+        Bandit-Lady and Bandit-Guard approaches, and safety-performance trade-space characteristics.
+      </p>
 
-      <figure class="figure-wrap">
-        <img src="assets/fig04_distance_histories.jpeg" alt="Bandit-Lady and Bandit-Guard distance histories" />
-        <figcaption>
-          Mission distance histories show how the adaptive MPC balances target pursuit and adversarial avoidance over normalized mission progress.
-        </figcaption>
-      </figure>
+      <img class="figure" src="assets/fig04_distance_histories.jpeg" alt="Adaptive MPC distance histories" />
+      <p class="caption">
+        Recorded Bandit-Lady and Bandit-Guard distance histories grouped by outcome. Successful runs typically reduce
+        target-relative distance while preserving or recovering Guard separation margins.
+      </p>
     </section>
 
     <section id="comparison" class="section container">
-      <div class="section-head">
-        <p class="eyebrow dark">Controller Comparison</p>
-        <h2>Naive MPC vs fixed-parameter MPC vs adaptive MPC</h2>
-        <p>
-          Representative 25-run comparisons show that online supervisory adaptation produces more flexible behavior under
-          aggressive Guard-interception geometries than fixed-parameter configurations.
-        </p>
-      </div>
-
-      <figure class="figure-wrap">
-        <img src="assets/fig05_controller_comparison.jpeg" alt="Controller configuration comparison" />
-        <figcaption>
-          Controller-configuration comparison across naive MPC, fixed-parameter MPC, and adaptive MPC.
-        </figcaption>
-      </figure>
+      <h2>Controller Comparison</h2>
+      <p class="narrow center">
+        The adaptive supervisory layer enables the controller to dynamically modify optimization priorities according
+        to evolving adversarial geometry, producing visibly different behavior compared with naive and fixed-parameter MPC configurations.
+      </p>
+      <img class="figure" src="assets/fig05_controller_comparison.jpeg" alt="Naive MPC, fixed agent, and adaptive agent comparison" />
+      <p class="caption">
+        Representative controller comparison across naive MPC, fixed-parameter MPC, and adaptive MPC cases.
+      </p>
     </section>
 
     <section id="interpretability" class="section container">
-      <div class="section-head">
-        <p class="eyebrow dark">Interpretability</p>
-        <h2>Adaptive behavior can be traced through MPC parameters.</h2>
-        <p>
-          Since the supervisory layer acts on physically meaningful optimization parameters, its behavior can be connected
-          to orbital geometry, keep-out-zone activity, and safety-performance tradeoffs.
-        </p>
-      </div>
+      <h2>Adaptive Parameters and Interpretability</h2>
+      <p class="narrow center">
+        Because the supervisory layer acts on interpretable MPC parameters, the adaptive behavior can be analyzed through
+        quantities such as Guard safety weight, minimum separation objective, target distance, and Guard proximity.
+      </p>
 
-      <div class="grid two">
-        <figure class="figure-wrap compact">
-          <img src="assets/fig06_parameter_evolution.png" alt="Adaptive safety-parameter evolution" />
-          <figcaption>
-            Population-level evolution of the Guard safety weight $w_{KOZ}$ and minimum-separation objective $d_{min}$.
-          </figcaption>
-        </figure>
+      <img class="figure" src="assets/fig06_parameter_evolution.png" alt="Adaptive parameter evolution" />
+      <p class="caption">
+        Population-level adaptive safety-parameter evolution, including the Guard keep-out-zone weight and minimum-separation objective.
+      </p>
 
-        <figure class="figure-wrap compact">
-          <img src="assets/fig07_interpretability.png" alt="Parameter-geometry interpretability" />
-          <figcaption>
-            Coupled interpretation of adaptive parameter changes with evolving Bandit-Lady and Bandit-Guard geometry.
-          </figcaption>
-        </figure>
-      </div>
+      <img class="figure" src="assets/fig07_interpretability.png" alt="Parameter geometry interpretability" />
+      <p class="caption">
+        Parameter-geometry interpretability: adaptive parameter choices can be related to changing target-pursuit and Guard-avoidance conditions.
+      </p>
     </section>
 
-    <section id="contributions" class="section container narrow">
-      <h2>Main Contributions</h2>
-      <ul class="contrib-list">
-        <li>AI-augmented constrained MPC architecture for adversarial spacecraft rendezvous and proximity operations.</li>
-        <li>Learning-based parameter adaptation operating on optimization-level MPC quantities instead of direct thrust commands.</li>
-        <li>Integration of CW orbital dynamics, actuator limits, predictive keep-out-zone constraints, slack-based feasibility handling, and optional CBF safety filtering.</li>
-        <li>Monte Carlo validation showing improved adaptive behavior and robustness relative to representative fixed-parameter MPC baselines.</li>
-        <li>Interpretable autonomy framework where adaptive decisions can be related to safety metrics, MPC parameters, and orbital geometry.</li>
-      </ul>
-    </section>
-
-    <section id="links" class="section container narrow">
-      <h2>Paper, Code, and Media</h2>
-      <div class="link-grid">
-        <a class="resource disabled" href="#">Paper · coming soon</a>
-        <a class="resource disabled" href="#">Code · coming soon</a>
-        <a class="resource disabled" href="#">Video · coming soon</a>
+    <section id="resources" class="section container narrow">
+      <h2>Paper and Code</h2>
+      <div class="resource-row">
+        <div class="resource-card small">
+          <h3>Paper</h3>
+          <p>Coming soon after publication or preprint release.</p>
+        </div>
+        <div class="resource-card small">
+          <h3>Code</h3>
+          <p>Coming soon if/when the implementation can be made public.</p>
+        </div>
+        <div class="resource-card small">
+          <h3>News</h3>
+          <p><a href="#competition">See competition coverage</a>.</p>
+        </div>
       </div>
     </section>
 
     <section id="citation" class="section container narrow">
-      <h2>Citation</h2>
+      <h2>BibTeX</h2>
       <pre><code>@article{sportelli2026ai_augmented_mpc,
-  title   = {AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations},
-  author  = {Sportelli, Luca and Barr, Tyler and Kilic, Cagri and Wu, Di},
+  title  = {AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations},
+  author = {Sportelli, Luca and Barr, Tyler and Kilic, Cagri and Wu, Di},
   journal = {Under review},
-  year    = {2026}
+  year   = {2026}
 }</code></pre>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <p>© 2026 Luca Sportelli · Embry-Riddle Aeronautical University</p>
-      <a href="#">Back to top ↑</a>
+    <div class="container footer-grid">
+      <div>
+        <strong>AI-Augmented MPC for Spacecraft RPO</strong>
+        <p>Constrained predictive control, adaptive supervision, and interpretable autonomy for adversarial spacecraft rendezvous.</p>
+      </div>
+      <div>
+        <p>Luca Sportelli · Embry-Riddle Aeronautical University · <a href="https://xdlab.space/" target="_blank" rel="noopener">XDLab</a></p>
+        <p><a href="#top">Back to top ↑</a></p>
+      </div>
     </div>
   </footer>
 </body>
