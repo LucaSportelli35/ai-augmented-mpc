@@ -1,31 +1,20 @@
-# AI-Augmented MPC for Safe and Adaptive Spacecraft RPO
+# AI-Augmented MPC for Safe Spacecraft RPO
 
 Project webpage for:
 
 **AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations**
 
-Website:
-https://lucasportelli35.github.io/ai-augmented-mpc/
+Authors: Luca Sportelli, Tyler Barr, Cagri Kilic, Di Wu  
+Affiliation: Embry-Riddle Aeronautical University
 
-## Included updates
+Website built with static HTML/CSS and deployed using GitHub Pages.
 
-This version keeps the stable v2 design and adds:
+## Repository structure
 
-- Competition recognition section
-- Aerospace America article link
-- Embry-Riddle news story link
-- XDLab link: https://xdlab.space/
-- Stable image sizing safeguards
+- `index.html` — main webpage
+- `style.css` — visual style
+- `assets/` — paper figures used by the webpage
 
-## How to update GitHub Pages
+## Update instructions
 
-1. Go to the GitHub repository.
-2. Click **Add file → Upload files**.
-3. Upload/replace:
-   - `index.html`
-   - `style.css`
-   - `README.md`
-   - `assets/`
-4. Click **Commit changes**.
-5. Wait around 1–3 minutes.
-6. Hard refresh the website.
+Edit `index.html` or `style.css`, commit the changes, and GitHub Pages will automatically redeploy the site.

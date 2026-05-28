@@ -224,7 +224,7 @@ h3 {
 
 .metric-strip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -440,46 +440,5 @@ footer {
   .footer-inner {
     flex-direction: column;
     text-align: center;
-  }
-}
-
-
-/* Minimal additions on top of the original v2 design */
-.authors a {
-  color: inherit;
-  font-weight: 850;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 24px;
-}
-
-.news-card {
-  text-align: left;
-}
-
-.news-card span {
-  display: block;
-  margin-bottom: 7px;
-  color: var(--blue);
-  font-size: 0.78rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.10em;
-}
-
-.news-card strong {
-  color: var(--navy-2);
-  line-height: 1.25;
-}
-
-@media (max-width: 760px) {
-  .news-grid {
-    grid-template-columns: 1fr;
   }
 }
