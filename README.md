@@ -4,23 +4,20 @@ Project webpage for:
 
 **AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations**
 
-Authors:
-Luca Sportelli, Tyler Barr, Cagri Kilic, Di Wu  
-Department of Aerospace Engineering, Embry-Riddle Aeronautical University  
-XDLab: https://xdlab.space/
-
 Website:
 https://lucasportelli35.github.io/ai-augmented-mpc/
 
-## Included files
+## Included updates
 
-- `index.html` — webpage content
-- `style.css` — visual design
-- `assets/` — figures used in the page
+This version keeps the stable v2 design and adds:
 
-## Update instructions
+- Competition recognition section
+- Aerospace America article link
+- Embry-Riddle news story link
+- XDLab link: https://xdlab.space/
+- Stable image sizing safeguards
 
-To update the GitHub Pages website:
+## How to update GitHub Pages
 
 1. Go to the GitHub repository.
 2. Click **Add file → Upload files**.
@@ -31,18 +28,4 @@ To update the GitHub Pages website:
    - `assets/`
 4. Click **Commit changes**.
 5. Wait around 1–3 minutes.
-6. Refresh the website.
-
-## External links included
-
-- XDLab: https://xdlab.space/
-- Aerospace America article: https://aerospaceamerica.aiaa.org/institute/gotcha-students-capture-malfunctioning-satellite-in-spacecraft-control-exercise/
-- ERAU news story: https://erau.edu/about/news-and-stories/news/embry-riddle-student-team-earns-first-place-in-capture-the-satellite-competition
-
-## Future additions
-
-- Add final paper link.
-- Add arXiv/DOI link when available.
-- Add code link if/when public.
-- Add video or GIF of the Capture-the-Satellite simulation.
-- Replace BibTeX once the final publication metadata is available.
+6. Hard refresh the website.
