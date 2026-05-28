@@ -224,7 +224,7 @@ h3 {
 
 .metric-strip {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -444,79 +444,41 @@ footer {
 }
 
 
-/* Stable v2+ additions: competition cards, XDLab link, and image safety */
-html {
-  scroll-behavior: smooth;
-}
-
-.authors a,
-footer a {
+/* Minimal additions on top of the original v2 design */
+.authors a {
   color: inherit;
-  font-weight: 800;
+  font-weight: 850;
   text-decoration: underline;
   text-underline-offset: 3px;
-}
-
-.center {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .news-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 28px;
+  gap: 14px;
+  margin-top: 24px;
 }
 
 .news-card {
-  display: block;
-  padding: 24px;
-  background: var(--card, #ffffff);
-  border: 1px solid var(--line, #d9e2ef);
-  border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(20, 36, 70, 0.06);
-  text-decoration: none;
-  color: var(--text, #152033);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
-
-.news-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 42px rgba(20, 36, 70, 0.12);
+  text-align: left;
 }
 
 .news-card span {
   display: block;
-  margin-bottom: 8px;
-  color: var(--blue, #174ea6);
+  margin-bottom: 7px;
+  color: var(--blue);
   font-size: 0.78rem;
-  font-weight: 850;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.10em;
 }
 
-.news-card h3 {
-  margin-top: 0;
-  color: var(--blue-dark, #0b2f6b);
-  line-height: 1.2;
+.news-card strong {
+  color: var(--navy-2);
+  line-height: 1.25;
 }
 
-.news-card p {
-  color: var(--muted, #5a6577);
-  margin-bottom: 0;
-}
-
-/* Prevent figures from becoming distorted or too tall */
-.teaser-img,
-.figure {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   .news-grid {
     grid-template-columns: 1fr;
   }

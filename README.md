@@ -1,31 +1,13 @@
-# AI-Augmented MPC for Safe and Adaptive Spacecraft RPO
+# AI-Augmented MPC Website
 
-Project webpage for:
+This version is based exactly on the stable v2 design.
 
-**AI-Augmented Model Predictive Control for Safe and Adaptive Rendezvous and Proximity Operations**
+Changes:
+- Removed the 940 metric.
+- Added the competition recognition section immediately after the metric strip.
+- Added Aerospace America, ERAU News, and XDLab links.
+- Added XDLab link in the author/affiliation line.
+- Kept the original v2 hero, layout, and visual style.
 
 Website:
 https://lucasportelli35.github.io/ai-augmented-mpc/
-
-## Included updates
-
-This version keeps the stable v2 design and adds:
-
-- Competition recognition section
-- Aerospace America article link
-- Embry-Riddle news story link
-- XDLab link: https://xdlab.space/
-- Stable image sizing safeguards
-
-## How to update GitHub Pages
-
-1. Go to the GitHub repository.
-2. Click **Add file → Upload files**.
-3. Upload/replace:
-   - `index.html`
-   - `style.css`
-   - `README.md`
-   - `assets/`
-4. Click **Commit changes**.
-5. Wait around 1–3 minutes.
-6. Hard refresh the website.
