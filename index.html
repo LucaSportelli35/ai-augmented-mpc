@@ -68,7 +68,7 @@
 
   <main>
     <section id="teaser" class="section container">
-      <img class="teaser-img" src="assets/fig01_architecture.png" alt="AI-augmented MPC architecture diagram" />
+      <img class="teaser-img" src="assets/Fig01_adaptive_mpc_architecture.jpg" alt="AI-augmented MPC architecture diagram" />
       <p class="caption">
         Overview of the proposed AI-augmented MPC framework. State and geometry features inform the adaptive supervisory layer, which updates bounded and interpretable MPC parameters. The constrained MPC/QP layer remains responsible for generating spacecraft thrust commands.
       </p>
@@ -161,7 +161,7 @@
         </div>
       </div>
 
-      <img class="figure" src="assets/fig02_prediction_horizon.png" alt="MPC prediction horizon and predictive safety constraints" />
+      <img class="figure" src="assets/Fig02_mpc_prediction_horizon_safety_constraints.jpg" alt="MPC prediction horizon and predictive safety constraints" />
       <p class="caption">
         MPC prediction horizon and predictive safety-constraint evaluation. The optimizer anticipates Bandit and Guard motion
         and adjusts the predicted trajectory when future keep-out-zone risk becomes active.
@@ -178,13 +178,13 @@
         <div><span class="big">16</span><br />Guard captures</div>
       </div>
 
-      <img class="figure" src="assets/fig03_montecarlo.jpeg" alt="Monte Carlo success statistics" />
+      <img class="figure" src="assets/Fig03_montecarlo_success_statistics.jpg" alt="Monte Carlo success statistics" />
       <p class="caption">
         Monte Carlo robustness evaluation over the 1000-run adaptive MPC campaign, showing outcome distributions, closest
         Bandit-Lady and Bandit-Guard approaches, and safety-performance trade-space characteristics.
       </p>
 
-      <img class="figure" src="assets/fig04_distance_histories.jpeg" alt="Adaptive MPC distance histories" />
+      <img class="figure" src="assets/Fig04_adaptive_mpc_distance_histories.jpg" alt="Adaptive MPC distance histories" />
       <p class="caption">
         Recorded Bandit-Lady and Bandit-Guard distance histories grouped by outcome. Successful runs typically reduce
         target-relative distance while preserving or recovering Guard separation margins.
@@ -197,7 +197,7 @@
         The adaptive supervisory layer enables the controller to dynamically modify optimization priorities according
         to evolving adversarial geometry, producing visibly different behavior compared with naive and fixed-parameter MPC configurations.
       </p>
-      <img class="figure" src="assets/fig05_controller_comparison.jpeg" alt="Naive MPC, fixed agent, and adaptive agent comparison" />
+      <img class="figure" src="assets/Fig05_small_comp.jpg" alt="Naive MPC, fixed agent, and adaptive agent comparison" />
       <p class="caption">
         Representative controller comparison across naive MPC, fixed-parameter MPC, and adaptive MPC cases.
       </p>
@@ -210,12 +210,12 @@
         quantities such as Guard safety weight, minimum separation objective, target distance, and Guard proximity.
       </p>
 
-      <img class="figure" src="assets/fig06_parameter_evolution.png" alt="Adaptive parameter evolution" />
+      <img class="figure" src="assets/Fig06_adaptive_parameters_wkoz_dmin.jpg" alt="Adaptive parameter evolution" />
       <p class="caption">
         Population-level adaptive safety-parameter evolution, including the Guard keep-out-zone weight and minimum-separation objective.
       </p>
 
-      <img class="figure" src="assets/fig07_interpretability.png" alt="Parameter geometry interpretability" />
+      <img class="figure" src="assets/Fig07_parameter_geometry_interpretability.jpg" alt="Parameter geometry interpretability" />
       <p class="caption">
         Parameter-geometry interpretability: adaptive parameter choices can be related to changing target-pursuit and Guard-avoidance conditions.
       </p>
